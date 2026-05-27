@@ -1,44 +1,35 @@
-# Recogonize Flowers with TensorFLow Lite Model Maker and Android Studio ML Model Binding
+本应用是一个基于 **TensorFlow Lite** 和 **CameraX** 的安卓图像分类项目。通过集成深度学习模型，能够实现对拍摄内容的实时智能识别与分析。
 
-This folder contains the code for the TensorFlow Lite codelab:
+## 项目简介
 
-* [Recognize Flowers with TensorFlow on Android (Beta)](https://goo.gle/3dbCSbt)
+本项目旨在展示如何在 Android 移动端部署轻量级机器学习模型。通过调用手机摄像头实时获取画面，利用预训练的模型进行推理，从而实现高效、准确的图像分类功能。
 
-## Introduction
+## 主要功能
 
-This beta codelab introduces the latest tooling using TensorFlow Lite Model Maker and Android Studio 4.1 Beta 1 or above. In addition, it will require access to a physical Android device to test. If you prefer to use the stable version of this codelab, follow this codelab instead.
+* **实时图像采集**：基于 Android CameraX API，实现流畅的摄像头画面预览。
+* **端侧推理 (On-Device Inference)**：利用 TensorFlow Lite 在手机本地运行模型，无需联网，保护用户隐私且响应速度极快。
+* **GPU 加速**：支持通过 GPU 代理（Delegate）加速模型推理，大幅降低延迟。
+* **智能识别展示**：直观展示识别结果，并提供相应的置信度分析。
 
-In these codelabs, you will learn:
+## 演示效果
 
-*   How to train your own custom image classifier using [TensorFlow Lite Model Maker](https://www.tensorflow.org/lite/tutorials/model_maker_image_classification).
-*   How to use Android Studio to import the TensorFlow Lite model to integrate the custom model in an Android app using CameraX.
-*   How to use GPU on your phone to accelerate your model.
+![](./image.jpg)
 
+## 技术栈
 
-## Pre-requisites
+* **开发环境**: Android Studio
+* **核心语言**: Kotlin / Java
+* **机器学习**: TensorFlow Lite, Model Binding
+* **图像处理**: CameraX
+* **性能优化**: GPU Acceleration (OpenGL/Vulkan)
 
-[Android Studio 4.1 Beta 1 or above](http://developers.android.com/studio/preview)
+## 如何运行
 
-## Getting Started
+1. **准备环境**: 确保使用 Android Studio 环境。
+2. **获取设备**: 本项目需要连接**实体 Android 手机**进行调试（因涉及摄像头硬件调用）。
+3. **配置模型**: 将 `.tflite` 模型文件放入 `assets` 目录下，并通过 Android Studio 的 ML Model Binding 自动生成接口类。
+4. **编译运行**: 直接点击 Run 即可在设备上查看效果。
 
-Visit the Google codelabs site to follow along the guided steps.
+## 许可证
 
-## Support
-
-- Stack Overflow: https://stackoverflow.com/questions/tagged/tensorflow-lite+android-studio
-
-## License
-
- Copyright (C) 2020 The Android Open Source Project
- 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
- 
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+本项目采用 Apache License 2.0 开源协议。
